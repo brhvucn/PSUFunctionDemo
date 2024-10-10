@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Extensions.Abstractions;
 using Microsoft.Extensions.Logging;
+using PSUFunctionsDemoProject.Models;
 
-namespace FunctionApp2
+namespace PSUFunctionsDemoProject.FunctionsQueues
 {
     public class CreateCustomer
     {
@@ -19,19 +20,9 @@ namespace FunctionApp2
         [QueueOutput("customers")]
         public Customer Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
         {
-           Customer customer = new Customer("John Doe");
+            Customer customer = new Customer();
+            customer.Name = "John Doe";
             return customer;
         }
-    }
-
-
-
-    public class Customer
-    {
-        public Customer(string name)
-        {
-            this.Name = name;
-        }
-        public string Name { get; set; } = string.Empty;
     }
 }

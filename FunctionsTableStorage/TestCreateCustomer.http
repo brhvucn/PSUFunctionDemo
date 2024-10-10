@@ -1,0 +1,20 @@
+﻿### POST request to local Azure Function
+# HOW TO USE: Start the functions project in visual studio
+# Open this file in Visual Studio and press "Send Request" link above the POST request
+
+# Create a new customer
+POST http://localhost:7087/api/CreateCustomerFunction
+Content-Type: application/json
+
+{
+    "name": "Peter Parker",
+    "email": "spidey@marvel.com",
+    "phonenumber": "12345678"
+}
+
+
+### Get all customers with a specific name
+GET http://localhost:7087/api/GetCustomersFunction
+Content-Type: application/json
+
+

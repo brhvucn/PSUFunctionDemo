@@ -1,0 +1,12 @@
+﻿### POST request to local Azure Function
+# HOW TO USE: Start the functions project in visual studio
+# Open this file in Visual Studio and press "Send Request" link above the POST request
+
+# Simulate uploading a file (or any large object)
+POST http://localhost:7087/api/UploadFileFunction
+Content-Type: application/json
+
+
+### Download a file from Azure Blob Storage
+
+GET http://localhost:7087/api/DownloadFileFunction
